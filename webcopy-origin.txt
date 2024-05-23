@@ -1,0 +1,48 @@
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\index.htm
+Content Type: text/html
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/libraries/p5.dom.min.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\libraries\p5.dom.min.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/libraries/p5.touchgui.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\libraries\p5.touchgui.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/libraries/p5livemedia.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\libraries\p5livemedia.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/libraries/p5play.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\libraries\p5play.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/libraries/planck.min.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\libraries\planck.min.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/libraries/simplepeer.min.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\libraries\simplepeer.min.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/libraries/socket.io.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\libraries\socket.io.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/MyPWA.json
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\MyPWA.json
+Content Type: application/json
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/sketch.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\sketch.js
+Content Type: text/javascript
+
+Uri: https://2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co/style.css
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\style.css
+Content Type: text/css
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js
+File Name: C:\Downloaded Web Sites\2223s2comp3finalproject-carlosnunez20.2223sem2comp3.repl.co\ajax\libs\p5.js\1.4.1\p5.js
+Content Type: application/javascript
+
