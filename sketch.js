@@ -35,12 +35,15 @@
       gameManager.update();
     }
     
+    // Classes
+    
     class GameManager {
       constructor() {
         this.menuIndex = 0;
         this.player = null;
         this.bulletManager = null;
         this.networkManager = null;
+        this.uiManager = null;
         this.isMobile = false;
         this.playButton = null;
         this.score = { host: 0, join: 0 };
@@ -96,8 +99,6 @@
         this.sprite.friction = 0.2;
         this.sprite.rotationLock = true;
         this.sprite.acceleration = 5;
-        this.dashCooldown = 0; // Cooldown timer for dashing
-        this.dashDistance = 100; // Distance to dash
       }
     
       update(isMobile) {
@@ -106,14 +107,7 @@
         } else {
           this.handleKeyboardControls();
         }
-    
-        this.handleAbilities(); // Check for ability inputs
         this.sprite.update();
-    
-        // Decrease cooldown timer
-        if (this.dashCooldown > 0) {
-          this.dashCooldown--;
-        }
       }
     
       handleKeyboardControls() {
@@ -132,25 +126,6 @@
         } else {
           this.sprite.velocity.y = 0;
         }
-      }
-    
-      handleAbilities() {
-        if (keyWentDown("e") && this.dashCooldown === 0) {
-          this.dash();
-        }
-      }
-    
-      dash() {
-        // Calculate new position based on facing direction
-        const dashX = this.sprite.x + cos(this.sprite.rotation) * this.dashDistance;
-        const dashY = this.sprite.y + sin(this.sprite.rotation) * this.dashDistance;
-    
-        // Move the player to the new position
-        this.sprite.position.x = dashX;
-        this.sprite.position.y = dashY;
-    
-        // Set cooldown timer
-        this.dashCooldown = 60; // Cooldown in frames (1 second if 60 FPS)
       }
     }
     
