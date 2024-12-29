@@ -97,6 +97,7 @@ function touchMoved() {
 
 function setup() {
   //misc
+  p5play.renderStats = true;
   world.gravity.y = 2;
   var canvasObject = createCanvas(windowWidth - 0, windowHeight - 0);
   background(220);
