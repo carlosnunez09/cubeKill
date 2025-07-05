@@ -727,10 +727,11 @@ function draw() {
       }
     }
 
-    for (let i = bullets.length - 1; i >= 0; i--) {
+    for (let i = 0; i < bullets.length; i++) {
       if (bullets[i].life <= 0) {
-        bullets[i].remove();
+        bullets[i].draw();
         bullets.splice(i, 1);
+        // activeBullets++;
       }
     }
 
@@ -755,7 +756,7 @@ function draw() {
     offnewplayer.rotation = bufferplayer.r;
 
     if (bulletsBuffer.length < lifeoff.length) {
-      for (let i = bulletsBuffer.length; i < lifeoff.length; i++) {
+      while (bulletsBuffer.length < lifeoff.length) {
         let bullet = createSprite(bulletXoff[i], bulletYoff[i], 10, 10);
         bullet.stroke = "red";
         bullet.strokeWeight = 3;
@@ -771,10 +772,10 @@ function draw() {
         bulletsBuffer.splice(i, 1);
       }
     }
-    for (let i = bulletsBuffer.length - 1; i >= 0; i--) {
+    for (let i = 0; i < bulletsBuffer.length; i++) {
       if (bulletsBuffer[i].life <= 1) {
-        bulletsBuffer[i].remove();
         bulletsBuffer.splice(i, 1);
+        i--;
       }
     }
     for (let i = 0; i < lifeoff.length; i++) {
@@ -1086,10 +1087,10 @@ function draw() {
         ///amount
       }
     }
-    for (let i = bullets.length - 1; i >= 0; i--) {
+    for (let i = 0; i < bullets.length; i++) {
       if (bullets[i].life <= 0) {
-        bullets[i].remove();
         bullets.splice(i, 1);
+        // activeBullets++;
       }
     }
 
@@ -1141,13 +1142,8 @@ function draw() {
           walls[i].w - 1.5,
           walls[i].h - 1.5
         );
-        // match host's dynamic behavior so join player can move walls
-        if (i === 1) {
-          wall.collider = "static";
-        } else {
-          wall.collider = "d";
-        }
-        wall.mass = 1;
+        wall.collider = "k";
+        wall.mass = 0
         wallsBuffer.push(wall);
       }
       startload = false;
@@ -1166,11 +1162,14 @@ function draw() {
 
     //bullets
     if (bulletsBuffer.length < life.length) {
-      for (let i = bulletsBuffer.length; i < life.length; i++) {
+      while (bulletsBuffer.length < life.length) {
         let bullet = createSprite(bulletX[i], bulletY[i], 10, 10);
         bullet.stroke = "red";
         bullet.strokeWeight = 3;
+        //bullet.drag = 10;
+        //bullet.bounciness = 2;
         bullet.mass = 2;
+        //bullet.collider = "k";
         bullet.life = life[i];
         bulletsBuffer.push(bullet);
       }
@@ -1181,10 +1180,10 @@ function draw() {
         bulletsBuffer.splice(i, 1);
       }
     }
-    for (let i = bulletsBuffer.length - 1; i >= 0; i--) {
+    for (let i = 0; i < bulletsBuffer.length; i++) {
       if (bulletsBuffer[i].life <= 1) {
-        bulletsBuffer[i].remove();
         bulletsBuffer.splice(i, 1);
+        i--;
       }
     }
     for (let i = 0; i < life.length; i++) {
@@ -1350,10 +1349,13 @@ Array.prototype.removeAll = function() {
 //modedv2f fro bullets: same function as above but it will take the real amount of bullets to delite insted of all that lived erorrw
 Array.prototype.removeAllCurrent = function() {
   for (let i = this.length - 1; i >= 0; i--) {
-    if (this[i] && typeof this[i].remove === 'function') {
+    if (this[i].life > 0) {
       this[i].remove();
+
+      this.splice(i, 1);
+    } else {
+      this.splice(i, 1);
     }
-    this.splice(i, 1);
   }
   this.length = 0;
 };
