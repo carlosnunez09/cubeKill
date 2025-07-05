@@ -897,7 +897,7 @@ function draw() {
       //lifeBullet: newbulletLife,
     };
 
-    CryptoHelper.encrypt(dataToSend).then(enc => p5lm.send(enc));
+    p5lm.send(JSON.stringify(dataToSend));
     //-----------------------------------------
     //recived
   }
@@ -1223,7 +1223,7 @@ function draw() {
     //lifeBullet: newbulletLife,
   };
 
-  CryptoHelper.encrypt(dataToSend1).then(enc => p5le.send(enc));
+  p5le.send(JSON.stringify(dataToSend1));
 }
 
 
@@ -1265,7 +1265,7 @@ function resetLoby(winner) {
   };
 
   print(datatosend3);
-  CryptoHelper.encrypt(datatosend3).then(enc => p5ls.send(enc));
+  p5ls.send(JSON.stringify(datatosend3));
 
 
 
@@ -1316,16 +1316,20 @@ function gotScore(data, id) {
   //reset and state who won
 }
 
-async function gotData1(data, id) {
-  const d = await CryptoHelper.decrypt(data);
+function gotData1(data, id) {
+  let d = JSON.parse(data);
   bufferplayer = d.player;
   bulletXoff = d.bulletsX;
   bulletYoff = d.bulletsy;
   lifeoff = d.lifebullet;
 }
 
-async function gotData(data, id) {
-  const d = await CryptoHelper.decrypt(data);
+function gotData(data, id) {
+  //print(id + ":" + data);
+
+  data = data;
+  // If it is JSON, parse it
+  let d = JSON.parse(data);
   bulletX = d.bulletsX;
   bulletY = d.bulletsy;
   life = d.lifebullet;
@@ -1355,7 +1359,7 @@ Array.prototype.removeAllCurrent = function() {
     }
     this.splice(i, 1);
   }
-  this.length = 0;
+  this.lenght = 0;
 };
 
 
