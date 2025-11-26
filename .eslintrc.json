@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "globals": {
+    "p5": "readonly",
+    "createCanvas": "readonly",
+    "background": "readonly",
+    "createSprite": "readonly",
+    "Sprite": "readonly",
+    "Group": "readonly",
+    "world": "readonly",
+    "kb": "readonly",
+    "mouse": "readonly",
+    "createGui": "readonly",
+    "drawGui": "readonly",
+    "createCheckbox": "readonly",
+    "createJoystick": "readonly",
+    "createButton": "readonly",
+    "io": "readonly",
+    "p5LiveMedia": "readonly",
+    "CloudNetworkAdapter": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": "off"
+  }
+}
