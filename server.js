@@ -1,16 +1,52 @@
 const express = require('express');
+const compression = require('compression');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"]
+  },
+  transports: ['websocket', 'polling'],
+  allowEIO3: true,
+  perMessageDeflate: {
+    threshold: 1024 // Only compress messages > 1KB
   }
 });
 const path = require('path');
 
-// Serve static files
-app.use(express.static(path.join(__dirname)));
+// Enable gzip/brotli compression for all HTTP responses
+app.use(compression({
+  level: 6, // Compression level (0-9, 6 is good balance)
+  threshold: 1024, // Only compress responses larger than 1KB
+  filter: (req, res) => {
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    return compression.filter(req, res);
+  }
+}));
+
+// Cache static files for better performance
+app.use(express.static(path.join(__dirname), {
+  maxAge: '1d', // Cache for 1 day in browser
+  etag: true,
+  lastModified: true,
+  setHeaders: (res, filePath) => {
+    // Cache JavaScript files aggressively
+    if (filePath.endsWith('.js')) {
+      res.setHeader('Cache-Control', 'public, max-age=86400'); // 1 day
+    }
+    // Cache CSS files
+    if (filePath.endsWith('.css')) {
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+    }
+    // Cache images
+    if (/\.(jpg|jpeg|png|gif|svg|ico)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=604800'); // 7 days
+    }
+  }
+}));
 
 // Store rooms and their connections
 const rooms = new Map();
