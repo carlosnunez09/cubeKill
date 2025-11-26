@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+.git
+.github
+.gitignore
+*.md
+.env
+.env.*
+.cache
+.config
+.replit
+replit.nix
+replit_zip_error_log.txt
+webcopy-origin.txt
+Dockerfile
+.dockerignore
