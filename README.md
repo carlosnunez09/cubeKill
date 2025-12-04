@@ -59,7 +59,6 @@ npm start
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 **Quick Deploy Options:**
-- Railway (Recommended)
 - Render
 - Heroku
 - Docker

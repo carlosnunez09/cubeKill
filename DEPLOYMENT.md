@@ -25,28 +25,7 @@ This guide explains how to deploy your cloud-based multiplayer Cube Hell game to
 
 ## ☁️ Cloud Deployment Options
 
-### Option 1: Railway (Recommended)
-
-Railway provides free hosting with automatic deployments.
-
-1. **Create Account**: Visit [railway.app](https://railway.app)
-
-2. **Deploy from GitHub**:
-   ```bash
-   # Push your code to GitHub first
-   git push origin main
-   ```
-
-3. **Connect Repository**:
-   - Click "New Project" → "Deploy from GitHub repo"
-   - Select your repository
-   - Railway will auto-detect the `railway.json` configuration
-
-4. **Access Your Game**:
-   - Railway will provide a URL like `https://your-app.railway.app`
-   - Share this URL with friends to play!
-
-### Option 2: Render
+### Option 1: Render
 
 1. **Create Account**: Visit [render.com](https://render.com)
 
@@ -59,7 +38,7 @@ Railway provides free hosting with automatic deployments.
    - Click "Create Web Service"
    - Wait for deployment to complete
 
-### Option 3: Heroku
+### Option 2: Heroku
 
 1. **Install Heroku CLI**:
    ```bash
@@ -82,7 +61,7 @@ Railway provides free hosting with automatic deployments.
    heroku open
    ```
 
-### Option 4: Docker (Any Platform)
+### Option 3: Docker (Any Platform)
 
 #### Using Docker Compose:
 ```bash
@@ -104,7 +83,7 @@ docker run -p 3000:3000 cube-hell
 - **Azure Container Instances**: `az container create`
 - **DigitalOcean App Platform**: Connect GitHub repository
 
-### Option 5: Vercel / Netlify (Static + Serverless)
+### Option 4: Vercel / Netlify (Static + Serverless)
 
 For Vercel/Netlify, you'll need to use their serverless functions for the Socket.io server:
 
@@ -146,13 +125,12 @@ If deploying the game client separately from the server:
 The server includes a built-in health check at `/` (root path).
 
 ```bash
-curl https://your-app.railway.app/
+curl https://your-app.render.com/
 ```
 
 ### Server Logs
 
 Check your platform's logging:
-- **Railway**: Project → Deployments → Logs
 - **Render**: Dashboard → Logs
 - **Heroku**: `heroku logs --tail`
 - **Docker**: `docker logs <container-id>`
@@ -192,7 +170,6 @@ Possible room combinations: **63 unique rooms**
    ```
 
 3. **HTTPS**: Most cloud platforms provide automatic HTTPS
-   - Railway: ✅ Automatic
    - Render: ✅ Automatic
    - Heroku: ✅ Automatic
 
